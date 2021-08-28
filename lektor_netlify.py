@@ -32,7 +32,7 @@ class NetlifyPublisher(Publisher):
         response.raise_for_status()
         j = response.json()
         for site in j:
-            site_url = urls.url_parse(unicode(site['url']))
+            site_url = urls.url_parse(str(site['url']))
             if site_url.host == host:
                 site_id = site['site_id']
                 break
